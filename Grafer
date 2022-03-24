@@ -1,1 +1,27 @@
 
+JSC.Chart('chartDiv', {
+    type: 'column',
+    series: [
+       {
+          name:'Andy',
+          points: [
+             {x: 100, y: 50},
+            //   {x: 'Oranges', y: 32}
+          ]
+       },{
+          name:'Anna',
+          points: [
+              {x: 100, y: 30},
+            //   {x: 'Oranges', y: 22}
+          ]
+       },{
+        name:'Isaac',
+        points: [
+           {x: 100, y: 70},
+        //    {x: 'Oranges', y: 10}
+        ]
+     }
+    ]
+ });
+
+
