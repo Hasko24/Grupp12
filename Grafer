@@ -1,27 +1,49 @@
+public class MainActivity extends AppCompatActivity {
 
-JSC.Chart('chartDiv', {
-    type: 'column',
-    series: [
-       {
-          name:'Andy',
-          points: [
-             {x: 100, y: 50},
-            //   {x: 'Oranges', y: 32}
-          ]
-       },{
-          name:'Anna',
-          points: [
-              {x: 100, y: 30},
-            //   {x: 'Oranges', y: 22}
-          ]
-       },{
-        name:'Isaac',
-        points: [
-           {x: 100, y: 70},
-        //    {x: 'Oranges', y: 10}
-        ]
-     }
-    ]
- });
+    public static final  String SHARED_PREF="com.example.barchart.EXTRA_TEXT";
+    public static final String EXTRA_TEXT= "com.example.barchart.EXTRA_TEXT";
+    public static final String EXTRA_TEXT1= "com.example.barchart.EXTRA_TEXT";
+    public static final String EXTRA_TEXT2= "com.example.barchart.EXTRA_TEXT";
+    float A1=0.0F;
+    float B1=0.0F;
+    float C1=0.0F;
+
+   Button button;
+   Button button1;
+   Button button2;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        Clear_DATA();
+        RestoreData();
+
+        SaveDATA();
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        button = findViewById(R.id.Happy);
+        button1 = findViewById(R.id.Sad);
+        button2= findViewById(R.id.Dont_care);
+
+        findViewById(R.id.buttonBarChart).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), BarchartActivity2.class)));
+        //RestoreData();
+
+        button.setOnClickListener(view -> {
+            A1++;
+
+            openActivity();
+        });
+
+        button1.setOnClickListener(view -> {
+            B1++;
+            openActivity();
+        });
+
+        button2.setOnClickListener(view -> {
+            C1++;
+            openActivity();
+        });
+
+
 
 
